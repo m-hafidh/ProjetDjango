@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+ 
+</head>
+<body>
+ <!--  {% if x is y %}
+    <h1>YES</h1>
+  {% else %}
+    <h1>NO</h1>
+  {% endif %} -->
+
+ <!--  {% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %} -->
+
+<!-- {% for x in cars %}
+  <h1>{{ x.brand }}</h1>
+  <p>{{ x.model }}</p>
+  <p>{{ x.year }}</p>
+{% endfor %} 
+
+<p>je suis hafidhou maoulida .</p>
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+   
+
+
+    <h1> Bye {# ceci est  un commentaire simple #} </h1>
+  0
+    <p>today I'm happy  Alhamdllh</p> -->
+
+    
+    
+    {% for x in members %}
+    <h1> {{ x.id}}</h1>
+    <p>
+        {{x.firstname}}
+        {{ x.lastname}}
+    </p>
+    {% endfor%}
+
+    <p>In views.py you can see what the fruits variable looks like.</p>
+
+
+    {% include 'footer.html' %}
+
+  
+</body>
+</html>

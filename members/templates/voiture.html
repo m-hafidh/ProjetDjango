@@ -6,8 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Oooooops!</h1>
-    <h2>La page demandée n'a pas été trouvée sur ce serveur.</h2>
-    <img src="image.jpg" alt=" page introuvable">
+    
+{% for x in cars %}
+  <h1>{{ x.brand }}</h1>
+  <p>{{ x.model }}</p>
+  <p>{{ x.year }}</p>
+{% endfor %} 
+
+<p>je suis hafidhou maoulida .</p>
+    
 </body>
 </html>
