@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+{% extends "master.html" %}
+
+{% block title %}
+ Mon premier projet Django - listes de Memebres 
+{% endblock %}
+
+
+
+</head>
+<body>
+{% block content %}
+
+<p><a href="/">Accueil</a></p>
+ 
+
+    <h1>Les Membres </h1>
+  
+    <ul>
+        {% for x in mymembers %}
+        <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        {% endfor %}
+      </ul>
+{% endblock %}
+</body>
+</html>
