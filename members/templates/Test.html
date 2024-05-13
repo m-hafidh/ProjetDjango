@@ -1,0 +1,37 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+</head>
+<body>
+
+    <p>l'objet queryset</p>
+    {{ mymembers}}
+
+    <p>Parcourez les élements</p>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>PRENOM</th>
+            <th>NOM</th>
+        </tr>
+        {% for x in mymembers %}
+
+        <tr>
+            <td>{{x.id}}</td>
+            <td>{{x.firstname}}</td>
+            <td>{{x.lastname}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

@@ -31,7 +31,7 @@ def main (request):
 
   # ajouter une vue de test sur notre projet 
 def testing(request):
-  template = loader.get_template('testing.html')
+  template = loader.get_template('template.html')
   context = {
     'fruits':['Pomme','Banane','cerise','kiwi'],
     
@@ -96,6 +96,33 @@ def Home(request):
  #  template = loader.get_template('myfirst.html')
  #  return HttpResponse(template.render())
 
+ # ajouter une vue de test sur notre page Test 
+
+def Montest(request):
+ # mydata = Members.objects.all() # la methode All() renvoie tous les Enregistrements 
+  #mydata = Members.objects.values_list('firstname') # la methode values.list() renvoie des colones specifique 
+ # mydata = Members.objects.filter(firstname='Maoulida').values() # la methode filter() renvoie uniquement de ligne ou enregistremnt specifique
+ #mydata = Member.objects.filter(lastname='Bezos', id=8).values()
+ #onpeut aussi utiliser le ou "|" pour renvoyer plusieurs enregitrement 
+ #mydata = Member.objects.filter(firstname='Hadjara').values() | Member.objects.filter(firstname='Taslima').values()
+ #Renvoyez les enregistrements où firstnamecommence par la lettre « L » : en utilisant le mot clé __startswithmot:
+ #mydata = Member.objects.filter(firstname__startswith='M').values()
+
+ #Classez le résultat par ordre alphabétique du prénom  en utilisant  la méthode "order_by()":
+  mydata = Members.objects.all().order_by('firstname').values() # Croissant
+  #mydata = Members.objects.all().order_by('-firstname').values() #Decroissant
+ 
+  template = loader.get_template("Test.html")
+  context = {
+    'mymembers' : mydata,
+  }
+  return HttpResponse(template.render(context, request))
+
+
+  
+
+
+ 
 
 
 

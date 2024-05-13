@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'MonpremiereprojetDjango.urls'
@@ -113,13 +114,22 @@ USE_I18N = True
 
 USE_TZ = True
 
+#***********************Collecter des fichiers statiques**************************
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
 STATIC_URL = 'static/'
 
+#Add this in your settings.py file: c'est ici qu'on peut ajouter tous les fichiers css 
+STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
