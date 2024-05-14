@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'members'
+    'members',
+    'bootstrap5',
+
 ]
 
 MIDDLEWARE = [
@@ -76,11 +78,22 @@ WSGI_APPLICATION = 'MonpremiereprojetDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+""" DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+} """
+
+DATABASES = { 
+    'default' : { 
+        'ENGINE' : 'django.db.backends.postgresql_psycopg2', 
+        'NAME' : 'postgres', 
+        'USER' : 'postgres', 
+        'PASSWORD' : '123456789', 
+        'HOST' : 'localhost', 
+        'PORT' : '5432', 
+    } 
 }
 
 
@@ -124,7 +137,7 @@ STATIC_URL = 'static/'
 
 #Add this in your settings.py file: c'est ici qu'on peut ajouter tous les fichiers css 
 STATICFILES_DIRS = [
-    BASE_DIR / 'mystaticfiles'
+    BASE_DIR / 'static',
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
